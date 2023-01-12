@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var numeroinicial = prompt("insira o num inicial");
+
+        var sinal = prompt("insira o sinal");
+
+        while(sinal !="+" && sinal != "-" && sinal != "/" && sinal!= "*"){
+            alert("por favor insira um sinal válido");
+            var sinal = prompt("insira o sinal");
+        }
+        
+        var numerofinal = prompt("insira o numero final");
+        var resultado=0;
+
+        numeroinicial = parseInt(numeroinicial);
+        numerofinal = parseInt(numerofinal);
+
+        if(sinal == "+"){
+            resultado = numeroinicial + numerofinal;
+        }else if(sinal == "-"){
+            resultado = numeroinicial - numerofinal;
+        }else if(sinal == "*"){
+            resultado = numeroinicial * numerofinal;
+        }else if(sinal == "/"){
+            resultado = numeroinicial / numerofinal;
+        };
+        
+        alert("o resultado é:" + resultado);
+
+
+    </script>
+</body>
+</html>

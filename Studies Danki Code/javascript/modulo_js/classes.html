@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Pessoa {
+            constructor(nome, idade, cor) {
+
+                this.nome = nome;
+                this.idade = idade;
+                this.cor = cor;
+            }
+
+            juntaTudo(nome, idade, cor) 
+            { 
+                
+               alert("junta tudo deu" + nome + idade + cor);
+                }
+
+        }
+        class Estudo extends Pessoa{
+            
+            constructor(nome,idade,cor){
+                super(nome,idade,cor);
+                this.nome;
+                this.idade;
+                this.cor;
+            }
+        }
+        
+            jao = new Pessoa("jao", 19, "preto");
+
+        //alert(jao.nome);
+
+        /*jao.juntaTudo("jao", 19, "preto")*/
+        estudo = new Estudo("jao",19,"pardo");
+        console.log(estudo);
+    </script>
+</body>
+
+</html>

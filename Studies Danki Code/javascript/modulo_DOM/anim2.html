@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .conteudo span {
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .conteudo p {
+            overflow: hidden;
+            height: 0;
+        }
+
+        .mostrar {
+            height: 200px !important;
+        }
+    </style>
+    <div class="conteudo">
+        <h2>O virus mortal <span>[ver mais!]</span> </h2>
+        <p>            dolor
+            obcaecati. Nisi illo, reiciendis fugit eum cumque unde praesentium, nostrum laboriosam quos quaerat
+            voluptates temporibus.</p>
+    </div>
+    <div class="conteudo">
+        <h2>O virus mortal <span>[ver mais!]</span> </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio tenetur voluptatum non laudantium
+            dolor
+            obcaecati. Nisi illo, reiciendis fugit eum cumque unde praesentium, nostrum laboriosam quos quaerat
+            voluptates temporibus.</p>
+    </div>
+    <div class="conteudo">
+        <h2>O virus mortal <span>[ver mais!]</span> </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio tenetur voluptatum non laudantium
+            dolor
+            obcaecati. Nisi illo, reiciendis fugit eum cumque unde praesentium, nostrum laboriosam quos quaerat
+            voluptates temporibus.</p>
+    </div>
+
+    <script>
+
+        var span = document.querySelectorAll('.conteudo span');
+        var conteudo = document.querySelectorAll('.conteudo p');
+        console.log(span);
+        span[0].addEventListener('click', function () {
+            if (conteudo[0].classList.contains('mostrar')) {
+                span[0].innerHTML = 'Ver mais!';
+                conteudo[0].classList.remove('mostrar');
+                console.log(span)
+            }
+            else {
+                conteudo[0].classList.add('mostrar');
+            }
+        }
+
+        );
+        span[1].addEventListener('click', function () {
+            if (conteudo[1].classList.contains('mostrar')) {
+                span[1].innerHTML = 'Ver mais!';
+                conteudo[1].classList.remove('mostrar');
+                console.log(span)
+            }
+            else {
+                conteudo[1].classList.add('mostrar');
+            }
+        }
+
+        );
+        span[2].addEventListener('click', function () {
+            if (conteudo[2].classList.contains('mostrar')) {
+                span[2].innerHTML = 'Ver mais!';
+                conteudo[2].classList.remove('mostrar');
+                console.log(span)
+            }
+            else {
+                conteudo[2].classList.add('mostrar');
+            }
+        }
+
+        );
+
+
+
+
+    </script>
+</body>
+
+
+</html>

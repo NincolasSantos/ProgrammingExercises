@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+
+    .playeropt img,
+    .enemyopt img {
+        width: 200px;
+        height: 100%;
+        opacity: 0.3;
+        cursor: pointer;
+        align-items: center;
+
+
+    }
+
+    .playeropt,
+    .enemyopt {
+        width: 50%;
+
+    }
+
+    .game {
+        display: flex;
+        justify-content: center;
+        margin-left: 500px;
+
+
+    }
+
+    .main h2 {
+        width: 100%;
+        text-align: center;
+        background-color: aliceblue;
+        color: blue;
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 50px;
+        font-weight: 300;
+        text-align: left;
+        margin-left: 50px;
+        font-style: italic;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="main">
+            <h2>Pedra, Papel ou Tesoura?</h2>
+        </div>
+        <div class="game">
+            <div class="playeropt">
+                <p>player</p>
+                <div><img opt="paper" src="/paper.png" alt=""></div>
+                <div><img opt="rock" src="/rock.png" alt=""></div>
+                <div><img opt="scisor" src="/scisor.png" alt=""></div>
+            </div>
+            <div class="enemyopt">
+                <p>enemy</p>
+                <div><img opt="paper" src="/paper.png" alt=""></div>
+                <div><img opt="rock" src="/rock.png" alt=""></div>
+                <div><img opt="scisor" src="/scisor.png" alt=""></div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var elements = document.querySelectorAll('.playeropt div > img');
+        var playerOpt = "";
+        var enemyOpt = "";
+
+        
+        function resetOpacityPlayer() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.opacity = '0.3';
+            }
+        }
+        function resetOpacityEnemy() {
+            const enemyChoices = document.querySelectorAll('.enemyopt div');
+            for (var i = 0; i < enemyChoices.length; i++) {
+                
+                enemyChoices[i].childNodes[0].style.opacity = '0.3';
+                
+            }
+        }
+
+        function enemyPlayer(){
+            let rand = Math.floor(Math.random()*3);
+
+            var enemyChoices =  document.querySelectorAll('.enemyopt div')
+            resetOpacityEnemy();
+            for(var i=0;i<enemyChoices.length;i++) {
+                if(i == rand){
+                    
+                    enemyChoices[i].childNodes[0].style.opacity = '1';
+                    enemyOpt = enemyChoices[i].childNodes[0].getAttribute('opt');
+                }
+            }
+            console.log(playerOpt);
+            console.log(enemyOpt);
+            
+        }
+
+        for (i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', function (t) {
+                resetOpacityPlayer();
+                t.target.style.opacity = '1';
+                playerOpt = t.target.getAttribute('opt');
+
+                enemyPlayer();
+
+            })
+        }
+
+    </script>
+</body>
+
+</html>
